@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <title>Youtube Template</title>
+    <style>
+      body {
+        height: 800px;
+        overflow: hidden;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .left-header {
+        font-size: 35px;
+      }
+      .bi-list {
+        margin-right: 10px;
+      }
+      .middle-header {
+        text-align: center;
+      }
+      .search {
+        width: 500px;
+        border: 1px solid gray;
+        margin-left: -150px;
+        padding: 10px;
+        border-radius: 50px;
+        display: inline-flex;
+        justify-content: space-between;
+        color: black;
+      }
+      .bi-mic-fill {
+        background-color: lightgray;
+        padding: 10px;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+      .right-header {
+        font-size: 21px;
+        padding: 10px;
+        color: blue;
+        text-align: center;
+      }
+      .bi-person-circle {
+        border: 1px solid gray;
+        padding: 8px;
+        border-radius: 40px;
+      }
+      .bi-three-dots-vertical {
+        padding-right: 20px;
+        color: black;
+      }
+      section {
+        margin-left: 10px;
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+      }
+      nav {
+        width: 80%;
+        height: 800px;
+        overflow: auto;
+        font-family: Segoe UI;
+        font-weight: 380;
+        scrollbar-width: none;
+      }
+      nav:hover {
+        scrollbar-width: thin;
+      }
+      nav .bi {
+        margin-right: 20px;
+        font-size: 20px;
+      }
+      nav .icon-title {
+        font-size: 18px;
+      }
+      .nav-item {
+        margin-bottom: 20px;
+      }
+      .signin {
+        margin-bottom: 20px;
+        margin-top: 10px;
+        font-size: 15px;
+      }
+      .signin-btn span {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 15px;
+        color: blue;
+      }
+      .row-2 {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        padding-top: 20px;
+        padding-bottom: 2px;
+      }
+      .row-3 {
+        border-bottom: 1px solid gray;
+      }
+      .title-row {
+        font-size: 18px;
+        font-weight: 450;
+        display: inline-block;
+        margin-bottom: 15px;
+        margin-top: 10px;
+      }
+      .row-5 {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+      }
+      .row-5 .bi {
+        color: red;
+      }
+      .row-6 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-bottom: 1px solid gray;
+      }
+      main .nit-banner img {
+        width: 1100px;
+
+        margin-right: 100px;
+        border-radius: 10px;
+      }
+      main {
+        margin-left: 20px;
+        font-family: Segoe UI;
+        height: 100vh;
+        overflow: auto;
+      }
+      .main-row-2 {
+        margin-top: 10px;
+        display: flex;
+      }
+      .nit-logo img {
+        width: 180px;
+        margin-right: 20px;
+      }
+      .nit-title {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 4px;
+      }
+      .line-1 {
+        color: rgb(79, 78, 78);
+        margin-bottom: 4px;
+      }
+      .line-2 {
+        color: gray;
+        margin-bottom: 4px;
+        width: 600px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .line-3 a {
+        text-decoration: none;
+      }
+      .line-3 span {
+        font-weight: 600;
+      }
+      .main-row-2 .subscribe {
+        display: inline-block;
+        background-color: black;
+        padding: 10px;
+        width: 80px;
+        color: white;
+        margin-top: 10px;
+        border-radius: 50px;
+        text-align: center;
+      }
+      .nav-tabs {
+        margin-top: 20px;
+        font-family: Arial;
+        font-size: 16px;
+        color: gray;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: 18px;
+        position: sticky;
+        top: 0px;
+        background-color: white;
+      }
+      .nav-tabs span {
+        margin-right: 25px;
+      }
+      .nav-tabs .home {
+        color: black;
+        padding-bottom: 18px;
+        border-bottom: 2px solid black;
+      }
+      .highlights {
+        margin-top: 10px;
+        border-bottom: 1px solid gray;
+        padding-bottom: 10px;
+        display: grid;
+        grid-template-columns: 6fr 9fr;
+      }
+      .frame iframe {
+        width: 450px;
+        height: 240px;
+        border-radius: 10px;
+      }
+      .videos {
+        margin-top: 20px;
+        font-family: Arial;
+      }
+      .videos-row {
+        display: grid;
+        grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;
+        margin-top: 20px;
+      }
+      .videos-row iframe {
+        width: 210px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left-header">
+        <span class="bi bi-list"></span>
+        <img src="./images/youtube-logo.png" alt="youtube" />
+      </div>
+      <div class="middle-header">
+        <div class="search">
+          <span>Search</span>
+          <span class="bi bi-search"></span>
+        </div>
+        <span class="bi bi-mic-fill"></span>
+      </div>
+      <div class="right-header">
+        <span class="bi bi-three-dots-vertical"></span>
+        <span class="bi bi-person-circle"> Sign in </span>
+      </div>
+    </header>
+    <section>
+      <nav>
+        <div class="row-1">
+          <div class="nav-item">
+            <span class="bi bi-house-door"></span
+            ><span class="icon-title">Home</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-film"></span
+            ><span class="icon-title">Shorts</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-collection-play"></span
+            ><span class="icon-title">Subscriptions</span>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="nav-item">
+            <span class="bi bi-play-btn"></span><span>You</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-clock-history"></span><span>History</span>
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="signin">
+            Sign in to like videos, comment, and subscribe.
+          </div>
+          <div class="signin-btn">
+            <span class="bi bi-person-circle"> Sign in </span>
+          </div>
+        </div>
+        <div class="row-4">
+          <span class="title-row">Explore</span>
+          <div class="nav-item">
+            <span class="bi bi-fire"></span><span>Trending</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-shop"></span><span>Shopping</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-music-note-list"></span><span>Music</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-camera-reels"></span><span>Movies</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-broadcast"></span><span>Live</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-controller"></span><span>Gaming</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-newspaper"></span><span>News</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-trophy"></span><span>Sports</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-lightbulb"></span><span>Courses</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-broadcast-pin"></span><span>Podcasts</span>
+          </div>
+        </div>
+        <div class="row-5">
+          <span class="title-row">More from YouTube</span>
+          <div class="nav-item">
+            <span class="bi bi-youtube"></span><span>YouTube Premium</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-music-note-beamed"></span
+            ><span>YouTube Music</span>
+          </div>
+          <div class="nav-item">
+            <span class="bi bi-play-circle"></span><span>YouTube Kids</span>
+          </div>
+        </div>
+        <div class="row-6">
+          <div class="nav-item">
+            <div class="nav-item">
+              <span class="bi bi-gear"></span><span>Setting</span>
+            </div>
+            <div class="nav-item">
+              <span class="bi bi-flag"></span><span>Report history</span>
+            </div>
+            <div class="nav-item">
+              <span class="bi bi-question-circle"></span><span>Help</span>
+            </div>
+            <div class="nav-item">
+              <span class="bi bi-chat-left"></span><span>Send feedback</span>
+            </div>
+          </div>
+        </div>
+        <div class="row-7">
+          <span
+            >About Press Copyright Contact us Creators Advertise
+            Developers</span
+          ><br /><br />
+          <span
+            >Terms Privacy Policy & Safety How YouTube Works Test new
+            features</span
+          >
+        </div>
+      </nav>
+      <main>
+        <div class="nit-banner">
+          <img src="./images/nit-banner.jpg" alt="Banner" />
+        </div>
+        <article>
+          <div class="main-row-2">
+            <div class="nit-logo">
+              <img src="./images/nit-logo.jpg" alt="" />
+            </div>
+            <div class="nit-details">
+              <div class="nit-title">Naresh i Technologies</div>
+              <div class="line-1">
+                @NareshIT • 1.29M subscribers • 3.1K videos
+              </div>
+              <div class="line-2">
+                We are one of the software training organization With a library
+                of 200+ courses, we have
+              </div>
+              <div class="line-3">
+                <a href="https://www.instagram.com/nareshitech"
+                  >instagram.com/nareshitech</a
+                >
+                <span>and 7 more links</span>
+              </div>
+              <span class="subscribe">Subscribe</span>
+            </div>
+          </div>
+        </article>
+        <div class="nav-tabs">
+          <span class="home">Home</span>
+          <span>Videos</span>
+          <span>Shorts</span>
+          <span>Live</span>
+          <span>Playlists</span>
+          <span>Community</span>
+          <span class="bi bi-search"></span>
+        </div>
+        <div class="highlights">
+          <div class="frame">
+            <iframe src="https://www.youtube.com/embed/yBw-6rr5hbA"></iframe>
+          </div>
+          <div class="info">
+            <div>
+              <b
+                >Best Software Training Institute with Placements - Naresh i
+                Technologies</b
+              >
+              <br /><br />
+              <div>
+                <small>
+                  <font color="gray">226,589 views 4 years ago</font>
+                </small>
+              </div>
+              <br />
+              <div>Register For Free Demos On New Batches :-</div>
+
+              <div>
+                Free Weekend Workshop on Azure AI Certification Training<br />
+                | @ 5:30 PM :-
+                <a href="https://shorturl.at/9gcXZ"
+                  >https://shorturl.at/9gcXZ</a
+                >
+                <br /><br />
+                Free Workshop on LangChain Build AI Applications Using LLM
+                <br />
+                | @ 10:00 AM :-
+                <a href="https://shorturl.at/g69kl"
+                  >https://shorturl.at/g69kl</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="videos">
+          <div class="videos-toolbar">
+            <span
+              ><big><b>Videos</b></big></span
+            >
+            <span class="bi bi-play-fill"></span> Play all
+          </div>
+          <div class="videos-row">
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+          </div>
+          <div class="videos-row">
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+          </div>
+          <div class="videos-row">
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+            <div>
+              <iframe src="https://www.youtube.com/embed/lqKQaJ4wMq0"></iframe>
+              <p>Do You Know Full Stack Developers Are Trending</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>

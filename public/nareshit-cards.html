@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NareshIT Cards</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+        margin-top: 100px;
+        margin-left: 40px;
+        font-family: Arial;
+      }
+      .card {
+        width: 350px;
+        border: 1px solid black;
+        border-radius: 10px;
+        box-shadow: 5px 5px 2px gray;
+      }
+      .image {
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      .card-header {
+        text-align: center;
+        padding: 10px;
+      }
+      .card-title {
+        font-size: 20px;
+        font-family: Arial;
+        font-weight: bold;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+      .rating {
+        color: goldenrod;
+      }
+      .card-body {
+        padding: 15px;
+      }
+      dl {
+        display: grid;
+        grid-template-columns: 4fr 8fr;
+      }
+
+      dt {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      dd {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+      .card-footer {
+        display: grid;
+        grid-template-columns: 6fr 6fr;
+        text-align: center;
+      }
+      .enroll {
+        background-color: blue;
+        color: white;
+        padding: 15px;
+        border-bottom-left-radius: 10px;
+      }
+      .share {
+        background-color: white;
+        padding: 15px;
+        border-top: 1px solid black;
+        border-bottom-right-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="./images/azure.png" alt="azure image" class="image" />
+
+        <div class="card-header">
+          <div class="card-title">MS Azure DevOps Online Training</div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <dl>
+            <dt><span class="bi bi-calendar-date"></span> Start Date:</dt>
+            <dd>21 Aug 2024</dd>
+            <dt><span class="bi bi-person"></span> By:</dt>
+            <dd>Mr. Rajesh</dd>
+            <dt><span class="bi bi-clock"></span> Dur:</dt>
+            <dd>60 Days</dd>
+          </dl>
+        </div>
+        <div class="card-footer">
+          <div class="enroll">ENROLL</div>
+          <div class="share"><span class="bi bi-share"></span> SHARE</div>
+        </div>
+      </div>
+
+      <!-- card 2 -->
+      <div class="card">
+        <img src="./images/spring.png" alt="azure image" class="image" />
+        <div class="card-header">
+          <div class="card-title">
+            Spring Basics, Spring Boot and Microservices
+          </div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <dl>
+            <dt><span class="bi bi-calendar-date"></span> Start Date:</dt>
+            <dd>01 Sep 2024</dd>
+            <dt><span class="bi bi-person"></span> By:</dt>
+            <dd>Mr. Kumar</dd>
+            <dt><span class="bi bi-clock"></span> Dur:</dt>
+            <dd>90 Days</dd>
+          </dl>
+        </div>
+        <div class="card-footer">
+          <div class="enroll">ENROLL</div>
+          <div class="share"><span class="bi bi-share"></span> SHARE</div>
+        </div>
+      </div>
+
+      <!-- card 3 -->
+      <div class="card">
+        <img src="./images/aws.png" alt="azure image" class="image" />
+        <div class="card-header">
+          <div class="card-title">Amazon Web Services (AWS)</div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <dl>
+            <dt><span class="bi bi-calendar-date"></span> Start Date:</dt>
+            <dd>15 Sep 2024</dd>
+            <dt><span class="bi bi-person"></span> By:</dt>
+            <dd>Mr. Nagurla</dd>
+            <dt><span class="bi bi-clock"></span> Dur:</dt>
+            <dd>60 Days</dd>
+          </dl>
+        </div>
+        <div class="card-footer">
+          <div class="enroll">ENROLL</div>
+          <div class="share"><span class="bi bi-share"></span> SHARE</div>
+        </div>
+      </div>
+
+      <!-- card 4 -->
+      <div class="card">
+        <img src="./images/html.png" alt="azure image" class="image" />
+
+        <div class="card-header">
+          <div class="card-title">HTML CSS JavaScript</div>
+          <div class="rating">
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+            <span class="bi bi-star-fill"></span>
+          </div>
+        </div>
+        <div class="card-body">
+          <dl>
+            <dt><span class="bi bi-calendar-date"></span> Start Date:</dt>
+            <dd>29 Sep 2024</dd>
+            <dt><span class="bi bi-person"></span> By:</dt>
+            <dd>Mr. Sampath</dd>
+            <dt><span class="bi bi-clock"></span> Dur:</dt>
+            <dd>45 Days</dd>
+          </dl>
+        </div>
+        <div class="card-footer">
+          <div class="enroll">ENROLL</div>
+          <div class="share"><span class="bi bi-share"></span> SHARE</div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

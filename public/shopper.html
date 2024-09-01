@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-in">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <title>Shopper</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      header {
+        font-family: Segoe UI;
+        font-size: 22px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+        align-items: baseline;
+      }
+      .brand-title {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      nav span {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .shortcuts span {
+        margin-right: 8px;
+      }
+      article {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-family: Segoe UI;
+      }
+      .bi-lightning-fill {
+        color: goldenrod;
+      }
+      footer {
+        background-color: black;
+        color: white;
+        padding: 20px;
+        font-family: Segoe UI;
+        margin-top: 50px;
+      }
+      .row-1 {
+        text-align: center;
+      }
+      .footer-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .row-2 {
+        margin-top: 30px;
+        text-align: center;
+      }
+      .email {
+        display: inline-block;
+        padding: 18px;
+        color: white;
+        background-color: #888;
+        width: 300px;
+        text-align: left;
+      }
+      .btn-subscribe {
+        display: inline-block;
+        background-color: #444;
+        margin-left: 20px;
+        width: 100px;
+        padding: 18px;
+      }
+      .row-3 {
+        display: grid;
+        grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;
+        margin-top: 30px;
+      }
+      .col span {
+        display: block;
+        margin-top: 15px;
+      }
+      .col-title {
+        font-size: 20px;
+      }
+      aside span {
+        padding-right: 10px;
+        padding-top: 20px;
+        display: inline-block;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        height: 500px;
+        font-family: Segoe UI;
+      }
+      .women-shopping {
+        background-image: url("images/women-shopping.jpg");
+      }
+      .men-shopping {
+        background-image: url("images/men-shopping.jpg");
+      }
+      .kids-shopping {
+        background-image: url("images/kids-shopping.jpg");
+      }
+      .shopping {
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        opacity: 0.7;
+      }
+      .main-title {
+        color: white;
+        font-weight: bold;
+        font-size: 55px;
+        text-shadow: 3px 3px 3px black;
+      }
+      .btn-shop {
+        color: black;
+        background-color: white;
+        padding: 10px;
+        width: 130px;
+        text-align: center;
+      }
+      .shopping:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand-title">Shopper.</div>
+      <nav>
+        <div>
+          <span>Home</span>
+          <span>Catalog</span>
+          <span>Shop</span>
+          <span>Pages</span>
+          <span>Blog</span><span>Docs</span>
+        </div>
+      </nav>
+      <div class="shortcuts">
+        <span class="bi bi-search"></span>
+        <span class="bi bi-person"></span>
+        <span class="bi bi-heart"></span>
+        <span class="bi bi-cart2"></span>
+      </div>
+    </header>
+    <section>
+      <article>
+        <span class="bi bi-lightning-fill"></span>
+        <span> HAPPY HOLIDAY DEALS ON EVERYTHING </span>
+        <span class="bi bi-lightning-fill"></span>
+      </article>
+      <main>
+        <div class="women-shopping shopping">
+          <div class="main-title">Women</div>
+          <div class="btn-shop">
+            Shop Women <span class="bi bi-arrow-right"></span>
+          </div>
+        </div>
+        <div class="men-shopping shopping">
+          <div class="main-title">Men</div>
+          <div class="btn-shop">
+            Shop Men <span class="bi bi-arrow-right"></span>
+          </div>
+        </div>
+        <div class="kids-shopping shopping">
+          <div class="main-title">Kids</div>
+          <div class="btn-shop">
+            Shop Kids <span class="bi bi-arrow-right"></span>
+          </div>
+        </div>
+      </main>
+    </section>
+    <footer>
+      <div class="row-1">
+        <span class="footer-title">Want style Ideas and Treats?</span>
+      </div>
+      <div class="row-2">
+        <span class="email">Enter Email</span>
+        <span class="btn-subscribe">Subscribe</span>
+      </div>
+      <div class="row-3">
+        <div>
+          <span class="brand-title">Shopper.</span>
+          <aside>
+            <span class="bi bi-facebook"></span>
+            <span class="bi bi-youtube"></span>
+            <span class="bi bi-twitter"></span>
+            <span class="bi bi-instagram"></span>
+            <span class="bi bi-medium"></span>
+          </aside>
+        </div>
+        <div class="col">
+          <span class="col-title">Support</span>
+          <span>Contact Us</span>
+          <span>FAQs</span>
+          <span>Size Guide</span>
+          <span>Shipping & Returns</span>
+        </div>
+        <div class="col">
+          <span class="col-title">SHOP</span>
+          <span>Mens's Shopping</span>
+          <span>Womens's Shopping</span>
+          <span>Kids's Shopping</span>
+          <span>Discounts</span>
+        </div>
+        <div class="col">
+          <span class="col-title">COMPANY</span>
+          <span>Our Story</span>
+          <span>Careers</span>
+          <span>Terms & Conditions</span>
+          <span>Privacy & Cookie policy</span>
+        </div>
+        <div class="col">
+          <address>
+            <span class="col-title">CONTACT</span>
+            <span>1-202-555-0105</span>
+            <span>1-202-555-0106</span>
+            <span>help@shopper.com</span>
+          </address>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-in">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix</title>
+    <link rel="shortcut icon" href="../public/images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        background-size: cover;
+      }
+      .shade {
+        height: 100vh;
+        margin-left: -8px;
+        margin-top: -8px;
+        width: 101.07%;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      header {
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 180px 30px 180px;
+      }
+      .brand-title {
+        font-size: 45px;
+        font-weight: bold;
+        color: rgb(229, 9, 20);
+      }
+      .language {
+        padding: 10px 15px 10px 15px;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+      }
+      .btn-signin {
+        background-color: red;
+        color: white;
+        padding: 10px 15px 10px 15px;
+        border-radius: 5px;
+        margin-left: 15px;
+      }
+      .right-header {
+        margin-top: 18px;
+      }
+      section {
+        color: white;
+        text-align: center;
+        margin-top: 200px;
+      }
+      section {
+        font-family: Segoe UI;
+      }
+      .title {
+        font-size: 55px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      .subtitle {
+        font-size: 25px;
+        margin-bottom: 15px;
+      }
+      .info {
+        font-size: 20px;
+      }
+      main {
+        margin-top: 25px;
+        margin-left: -100px;
+      }
+      .mail {
+        background-color: rgba(0, 0, 0, 0.4);
+        display: inline-block;
+        width: 350px;
+        padding: 20px;
+        border: 1px solid white;
+        text-align: left;
+      }
+      .btn-start {
+        background-color: red;
+        color: white;
+        padding: 20px;
+        margin-left: 10px;
+        display: inline-block;
+        width: 150px;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body background="./images/netflix-banner.jpg"></body>
+  <div class="shade">
+    <header>
+      <div><span class="brand-title">NETFLIX</span></div>
+      <div class="right-header">
+        <span class="language">
+          <span class="bi bi-translate"></span>
+          <span>English</span>
+          <span class="bi bi-chevron-bar-down"></span>
+        </span>
+        <span class="btn-signin">Sign In</span>
+      </div>
+    </header>
+    <section>
+      <div class="title">Unlimited movies, TV shows and more</div>
+      <div class="subtitle">Watch anywhere. Cancel anytime.</div>
+      <div class="info">
+        Ready to watch? Enter your email to create or restart your membership
+      </div>
+      <main>
+        <span>
+          <span class="mail">Email address</span>
+          <span class="btn-start"
+            >Get Started <span class="bi bi-chevron-bar-right"></span
+          ></span>
+        </span>
+      </main>
+    </section>
+  </div>
+</html>
