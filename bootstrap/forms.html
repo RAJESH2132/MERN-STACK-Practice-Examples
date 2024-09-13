@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </head>
+  <body class="container-fluid d-flex justify-content-center">
+    <form
+      class="mt-4 w-25 bg-dark text-white border border-1 p-3 rounded border-dark"
+    >
+      <div class="h4 bi bi-person-fill">Register New User</div>
+      <div>
+        <label class="form-label" for="UserName">User Name</label>
+        <div>
+          <input type="text" name="UserName" class="form-control" />
+        </div>
+      </div>
+      <div class="my-3">
+        <label class="form-label" for="Password">Password</label>
+        <div>
+          <input type="password" class="form-control" name="Password" />
+        </div>
+      </div>
+      <div class="my-3">
+        <label class="form-label" for="Price">Price</label>
+        <div>
+          <input type="range" class="form-range" name="Price" />
+        </div>
+      </div>
+      <div class="my-3">
+        <label for="City" class="form-label">Your City</label>
+        <div>
+          <select name="City" class="form-select">
+            <option>Select City</option>
+            <option>Delhi</option>
+            <option>Hyd</option>
+          </select>
+        </div>
+      </div>
+      <div class="my-2">
+        <label class="form-label">Subscribe</label>
+        <div class="form-switch">
+          <input type="checkbox" class="form-check-input" checked />
+          <label class="form-check-label"> Yes </label>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary w-100">Register</button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <title>Tables</title>
+    <style>
+      caption {
+        caption-side: top;
+        font-weight: bold;
+        margin: 20px;
+        text-transform: uppercase;
+        font-size: 40px;
+        color: #001861;
+        text-align: left;
+      }
+      .main-table {
+        margin-left: 150px;
+        height: 500px;
+        margin-top: 50px;
+      }
+      .main-table td {
+        padding-right: 30px;
+      }
+      .sub-table {
+        height: 100%;
+        border: 2px solid gray;
+        width: 400px;
+        border-collapse: collapse;
+      }
+      .sub-table td {
+        text-align: center;
+        border-top: 1px solid lightgray;
+      }
+      .sub-table td {
+        text-align: center;
+      }
+      .sub-table th {
+        padding: 10px;
+        font-size: 22px;
+        text-transform: uppercase;
+      }
+      .position {
+        border-right: 1px solid lightgrey;
+      }
+      .person {
+        text-align: left;
+      }
+      .person img {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="main-table">
+      <caption>
+        Men's batting rankings
+      </caption>
+      <tbody>
+        <tr>
+          <td>
+            <table class="sub-table" rules="row">
+              <thead>
+                <tr>
+                  <th colspan="4">test - batting Rankings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="position">01.</td>
+                  <td class="person">
+                    <img
+                      src="./public/images/eng-flag.png"
+                      alt=""
+                      class="flag"
+                    />Joe <span class="name">RoOT</span>
+                  </td>
+                  <td class="rating">992</td>
+                </tr>
+                <tr>
+                  <td class="position">02.</td>
+                  <td>
+                    <img
+                      src="./public/images/nzb-flag.png"
+                      alt=""
+                      class="flag"
+                    />
+                    Kane <span class="name">williamson</span>
+                  </td>
+                  <td>859</td>
+                </tr>
+                <tr>
+                  <td class="position">03.</td>
+                  <td class="person">
+                    <img
+                      src="./public/images/nzb-flag.png"
+                      alt=""
+                      class="flag"
+                    />Daryl <span class="name">mitchell</span>
+                  </td>
+                  <td class="rating">768</td>
+                </tr>
+                <tr>
+                  <td class="position">04.</td>
+                  <td class="person">
+                    <img
+                      src="./public/images/aus-flag.png"
+                      alt=""
+                      class="flag"
+                    />Steven <span class="name">Smith</span>
+                  </td>
+                  <td class="rating">757</td>
+                </tr>
+                <tr>
+                  <td class="position">05.</td>
+                  <td class="person">
+                    <img
+                      src="./public/images/eng-flag.png"
+                      alt=""
+                      class="flag"
+                    />Harry <span class="name">brook</span>
+                  </td>
+                  <td class="rating">753</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>
+                    full rankings <span class="bi bi-chevron-bar-right"></span>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </td>
+          <td>
+            <table class="sub-table">
+              <thead>
+                <tr>
+                  <th colspan="4">test - batting Rankings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table class="sub-table">
+              <thead>
+                <tr>
+                  <th colspan="4">test - batting Rankings</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+                <tr>
+                  <td>01</td>
+                  <td>Joe RoOT</td>
+                  <td>881</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

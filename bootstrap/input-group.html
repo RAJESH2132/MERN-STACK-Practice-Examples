@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Group</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </head>
+  <body class="container-fluid">
+    <h2>Amazon</h2>
+    <div class="w-50 input-group">
+      <select class="input-group-text">
+        <option>All</option>
+        <option>Mobiles</option>
+        <option>Fashion</option>
+      </select>
+      <input type="text" class="form-control" placeholder="Search Amazon.in" />
+      <button class="bi bi-search btn btn-warning"></button>
+    </div>
+    <h2>Netflix</h2>
+    <div class="w-50 input-group input-group-lg p-4 bg-dark">
+      <input
+        type="email"
+        placeholder="Your email address"
+        class="form-control"
+      />
+      <button class="btn btn-danger">
+        Get Started <span class="bi bi-chevron-right"></span>
+      </button>
+    </div>
+    <h3>Login</h3>
+    <div class="w-25 input-group">
+      <span class="bi bi-person-fill input-group-text"></span>
+      <input type="text" class="form-control" placeholder="User Name" />
+      <span class="bi bi-check-square input-group-text"></span>
+    </div>
+    <div class="w-25 mt-3 input-group">
+      <span class="bi bi-key-fill input-group-text"></span>
+      <input type="password" class="form-control" placeholder="Password" />
+      <span class="bi bi-check-square input-group-text"></span>
+    </div>
+    <div class="w-25 mt-3 input-group">
+      <span class="bi bi-envelope input-group-text"></span>
+      <input type="email" class="form-control" placeholder="your email" />
+      <span class="input-group-text">@gmail.com</span>
+    </div>
+  </body>
+</html>
