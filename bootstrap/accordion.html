@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordian</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </head>
+  <body class="container-fluid bg-black">
+    <h1 class="text-center text-white mb-4">Frequently Asked Questions</h1>
+    <div class="accordion mx-3" id="faqs">
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <button
+            class="accordion-button"
+            data-bs-target="#q1"
+            data-bs-toggle="collapse"
+          >
+            What is Netflix?
+          </button>
+        </div>
+        <div class="accordion-collapse collapse" id="q1" data-bs-parent="#faqs">
+          <div class="accordion-body">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              quaerat labore, facere enim ipsum iusto reiciendis molestias.
+              Minus sapiente doloribus voluptates perspiciatis ipsam. Culpa,
+              odit!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Excepturi dolore esse quis, placeat mollitia totam atque autem
+              odit a animi quae rerum doloribus impedit! Nostrum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item mt-2 mb-2">
+        <div class="accordion-header">
+          <button
+            class="accordion-button"
+            data-bs-target="#q2"
+            data-bs-toggle="collapse"
+          >
+            How much does Netflix cost?
+          </button>
+        </div>
+        <div class="accordion-collapse collapse" id="q2" data-bs-parent="#faqs">
+          <div class="accordion-body">
+            <p>
+              Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+              streaming device, all for one fixed monthly fee. Plans range from
+              ₹149 to ₹649 a month. No extra costs, no contracts.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <button
+            class="accordion-button"
+            data-bs-target="#q3"
+            data-bs-toggle="collapse"
+          >
+            Where can I Watch
+          </button>
+        </div>
+        <div class="accordion-collapse collapse" id="q3" data-bs-parent="#faqs">
+          <div class="accordion-body">
+            <p>
+              Watch anywhere, anytime. Sign in with your Netflix account to
+              watch instantly on the web at netflix.com from your personal
+              computer or on any internet-connected device that offers the
+              Netflix app, including smart TVs, smartphones, tablets, streaming
+              media players and game consoles.
+            </p>
+            <p>
+              You can also download your favourite shows with the iOS or Android
+              app. Use downloads to watch while you're on the go and without an
+              internet connection. Take Netflix with you anywhere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
