@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nav and Tabs</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </head>
+  <body class="container-fluid">
+    <h3>Virat Kohli Profile</h3>
+    <ul class="nav nav-tabs mt-4">
+      <li class="nav-item">
+        <a data-bs-toggle="tab" href="#profile" class="nav-link active"
+          >Profile</a
+        >
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="tab" href="#stats" class="nav-link">Carrer Stats</a>
+      </li>
+      <li class="nav-item">
+        <a href="#achievements" class="nav-link" data-bs-toggle="tab"
+          >Achievements</a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="#personal" class="nav-link" data-bs-toggle="tab"
+          >Personal Life</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content mt-1">
+      <div class="tab-pane active" id="profile">
+        <h5>Profile</h5>
+        <p><strong>Full Name:</strong> Virat Kohli</p>
+        <p><strong>Date of Birth:</strong> November 5, 1988</p>
+        <p><strong>Nationality:</strong> Indian</p>
+        <p><strong>Role:</strong> Batsman</p>
+        <p><strong>Batting Style:</strong> Right-hand bat</p>
+        <p><strong>Bowling Style:</strong> Right-arm medium</p>
+        <p>
+          <strong>Debut:</strong> ODI (August 18, 2008), Test (June 20, 2011),
+          T20I (June 12, 2010)
+        </p>
+        <p>
+          <strong>Current Teams:</strong> India (International), Royal
+          Challengers Bangalore (IPL)
+        </p>
+      </div>
+      <div class="tab-pane fade" id="stats">
+        <h5>Career Stats</h5>
+        <h6>Test Matches:</h6>
+        <p>Matches: 111 | Runs: 8,676 | Centuries: 29 | Average: 49.29</p>
+
+        <h6>ODIs:</h6>
+        <p>Matches: 275 | Runs: 12,344 | Centuries: 43 | Average: 57.68</p>
+
+        <h6>T20 Internationals:</h6>
+        <p>Matches: 115 | Runs: 4,008 | Average: 52.73 | Strike Rate: 137.96</p>
+
+        <h6>IPL:</h6>
+        <p>Matches: 237 | Runs: 7,263 | Centuries: 7 | Average: 37.25</p>
+      </div>
+
+      <div class="tab-pane fade" id="achievements">
+        <h5>Achievements</h5>
+        <h6>Awards:</h6>
+        <ul>
+          <li>ICC Cricketer of the Year (2017, 2018)</li>
+          <li>Padma Shri (2017)</li>
+          <li>Rajiv Gandhi Khel Ratna (2018)</li>
+          <li>Arjuna Award (2013)</li>
+        </ul>
+
+        <h6>Records:</h6>
+        <ul>
+          <li>
+            Fastest to 8,000, 9,000, 10,000, 11,000, and 12,000 runs in ODI
+            cricket
+          </li>
+          <li>Most double centuries as an Indian captain</li>
+          <li>Fastest century in ODIs by an Indian (52 balls)</li>
+        </ul>
+
+        <h6>Captaincy:</h6>
+        <p>
+          Led India to No. 1 position in ICC Test Rankings, Captained India in
+          65 Tests, 95 ODIs, and 50 T20Is
+        </p>
+      </div>
+
+      <div class="tab-pane fade" id="personal">
+        <h5>Personal Life</h5>
+        <p>
+          <strong>Family:</strong> Father: Prem Kohli (Late), Mother: Saroj
+          Kohli, Wife: Anushka Sharma, Daughter: Vamika
+        </p>
+        <p>
+          <strong>Hobbies:</strong> Fitness, Traveling, Listening to Music,
+          Reading
+        </p>
+        <p>
+          <strong>Philanthropy:</strong> Runs the "Virat Kohli Foundation,"
+          supporting underprivileged children and athletes.
+        </p>
+        <p>
+          <strong>Other Interests:</strong> Co-owner of ISL team FC Goa, Fashion
+          brand "Wrogn"
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

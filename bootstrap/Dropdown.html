@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </head>
+  <body class="container-fluid">
+    <h3 class="my-4">Flipkart Shopping</h3>
+    <div class="dropdown" data-bs-theme="dark">
+      <button
+        class="btn btn-dark btn-lg dropdown-toggle"
+        data-bs-target="#menu"
+        data-bs-toggle="dropdown"
+      >
+        <span class="bi bi-person-circle"> Login</span>
+      </button>
+      <ul class="dropdown-menu" id="menu">
+        <li class="dropdown-item">
+          <a><span class="bi bi-person-circle"> My Profile</span></a>
+        </li>
+        <li class="dropdown-item my-2">
+          <a><span class="bi bi-star"> Flipkart Plus</span></a>
+        </li>
+        <li class="dropdown-item">
+          <a><span class="bi bi-box"> Orders</span></a>
+        </li>
+        <li class="dropdown-item my-2">
+          <a><span class="bi bi-list-check"> Whishlist</span></a>
+        </li>
+        <li class="dropdown-item">
+          <a><span class="bi bi-gift"> Rewards</span></a>
+        </li>
+        <li class="dropdown-item my-2">
+          <a><span class="bi bi-credit-card"> Gift Cards</span></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
