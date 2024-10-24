@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      var tip = "";
+      var pattern = / /;
+      function CountryChange() {
+        var countryName = document.getElementById("lstCountries").value;
+        var pic = document.getElementById("imgFlag");
+        if (countryName == "India") {
+          tip = "eg: +91 and 10 digits";
+          pic.src = "../public/images/ind-flag.png";
+          pattern = /\+91\d{10}/;
+        } else if (countryName == "US") {
+          tip = "eg: +(1)(425) 555-0100";
+          pic.src = "../public/images/aus-flag.png";
+          pattern = /\+\(1\)\(\d{3}\)\s\d{3}-\d{4}/;
+        } else if (countryName == "UK") {
+          tip = "eg: +(44)(20) 1234 5678";
+          pic.src = "../public/images/eng-flag.png";
+          pattern = /\+\(44\)\(\d{2}\)\s\d{4}\s\d{4}/;
+        }
+
+        var mobileTextBox = document.getElementById("txtMobile");
+        mobileTextBox.placeholder = tip;
+      }
+      function SubmitClick() {
+        var mobile = document.getElementById("txtMobile").value;
+        if (mobile.match(pattern)) {
+          document.write("<h2>Mobile Verified Successfully..</h2>");
+        } else {
+          document.getElementById(
+            "lblError"
+          ).innerHTML = `Invalid Mobile ${tip}`;
+        }
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <dl class="w-25 mt-2">
+      <dt>Select Country</dt>
+      <dd class="input-group">
+        <select
+          id="lstCountries"
+          onchange="CountryChange()"
+          class="form-select"
+        >
+          <option>Select Your Country</option>
+          <option>India</option>
+          <option>US</option>
+          <option>UK</option>
+        </select>
+        <img class="input-group-text" id="imgFlag" width="70" />
+      </dd>
+      <dt>Mobile Number</dt>
+      <dd>
+        <input type="text" id="txtMobile" class="form-control" />
+      </dd>
+      <dd id="lblError" class="text-danger"></dd>
+      <dd>
+        <button onclick="SubmitClick()" class="btn btn-warning w-100">
+          Submit
+        </button>
+      </dd>
+    </dl>
+  </body>
+</html>

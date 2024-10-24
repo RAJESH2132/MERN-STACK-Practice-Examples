@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Manipulation 1</title>
+    <style>
+      .drop {
+        margin-left: 40px;
+        margin-top: 10px;
+      }
+      select {
+        width: 400px;
+        font-size: 20px;
+        padding-left: 20px;
+        height: 50px;
+      }
+      li {
+        font-size: 25px;
+        margin-left: 40px;
+        padding: 6px;
+      }
+      nav {
+        margin-left: 40px;
+      }
+      #newItem {
+        margin-left: 40px;
+        margin-top: 10px;
+        width: 360px;
+        padding: 15px;
+        font-size: 20px;
+      }
+      div #button {
+        padding: 15px;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      var categories = ["All", "Electronics", "Footwear", "Fashion", "Gifts"];
+      function ButtonClick() {
+        var item = document.getElementById("newItem").value;
+        if (item === "" || categories.indexOf(item) !== -1) {
+          alert("You added Empty String or Duplicate Category");
+          document.getElementById("newItem").value = "";
+        } else {
+          categories.push(item);
+          console.log(categories);
+          bodyLoad();
+          document.getElementById("newItem").value = "";
+        }
+      }
+      function bodyLoad() {
+        document.querySelector("select").innerHTML = "";
+        document.querySelector("ul").innerHTML = "";
+        document.querySelector("nav").innerHTML = "";
+        //Adding New Elements
+        //<!-- Drop Down Menu -->---------------------------------------------------
+        categories.map(function (category) {
+          var option = document.createElement("option");
+          option.value = category;
+          option.text = category;
+
+          var select = document.querySelector("select");
+          select.appendChild(option);
+
+          //<!-- Unorder List --> --------------------------------------------
+          var li = document.createElement("li");
+          var label = document.createElement("label");
+          var input = document.createElement("input");
+          input.type = "checkbox";
+
+          label.innerHTML = category;
+
+          li.appendChild(input);
+          li.appendChild(label);
+
+          document.querySelector("ul").appendChild(li);
+
+          //<!-- Nav -->---------------------------------------------------------
+          var button = document.createElement("button");
+          button.innerHTML = category;
+          button.style.fontSize = "20px";
+          button.style.marginRight = "30px";
+          button.style.padding = "10px";
+
+          document.querySelector("nav").appendChild(button);
+        });
+      }
+    </script>
+  </head>
+  <body onload="bodyLoad()">
+    <div>
+      <input type="text" id="newItem" placeholder="Add New Category" />
+      <input type="button" value="Add" id="button" onclick="ButtonClick()" />
+    </div>
+    <div class="drop">
+      <h2>Drop Down</h2>
+      <select name="category" id="category"></select>
+    </div>
+    <div class="drop">
+      <h2>Unordered List</h2>
+      <ul></ul>
+    </div>
+    <div class="drop">
+      <h2>Navigation</h2>
+      <nav></nav>
+    </div>
+  </body>
+</html>
