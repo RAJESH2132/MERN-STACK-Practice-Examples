@@ -1,0 +1,5 @@
+- AJAX refers to "Asynchronous JavaScript And XML".
+- It enables partial-post back.
+- It can add new details to page without reloading the page.
+- JavaScript ajax requests are handled by using "XMLHttpRequest" object.
+- It is a browser object use to make Ajax call from page.

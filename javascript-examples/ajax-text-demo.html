@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax Text Demo</title>
+    <script>
+      function LoadClick() {
+        var http = new XMLHttpRequest();
+        http.open("get", "../data/demo.txt", true);
+        http.send();
+
+        http.onreadystatechange = function () {
+          if (http.readyState === 4) {
+            document.getElementById("container").innerHTML = http.responseText;
+          }
+        };
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="LoadClick()">Load Help</button>
+    <br /><br />
+    <div>
+      <pre id="container"></pre>
+    </div>
+  </body>
+</html>
