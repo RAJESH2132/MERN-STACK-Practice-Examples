@@ -1,0 +1,17 @@
+[
+  {
+    "title": "iPhone 15 (Black, 128 GB)",
+    "image": "../public/images/iphone-black.png",
+    "price": 56799
+  },
+  {
+    "title": "iPhone 15 (Mid Night, 256 GB)",
+    "image": "../public/images/iphone-night.png",
+    "price": 76799
+  },
+  {
+    "title": "iPhone 15 (White, 128 GB)",
+    "image": "../public/images/iphone-white.png",
+    "price": 64799
+  }
+]
