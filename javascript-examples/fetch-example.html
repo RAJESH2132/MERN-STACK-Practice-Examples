@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Example</title>
+    <script>
+      function BodyLoad() {
+        fetch("../data/products.json")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (products) {
+            products.map(function (product) {
+              var div = document.createElement("div");
+              var h2 = document.createElement("h2");
+              var h3 = document.createElement("h3");
+              var img = document.createElement("img");
+              img.src = product.image;
+              img.style.width = "150px";
+              h2.innerHTML = product.title;
+              h3.innerHTML = product.price;
+
+              div.appendChild(img);
+              div.appendChild(h2);
+              div.appendChild(h3);
+
+              var main = document.querySelector("main");
+              main.appendChild(div);
+              main.style.display = "flex";
+              main.style.justifyContent = "space-around";
+            });
+          });
+      }
+    </script>
+  </head>
+  <body onload="BodyLoad()">
+    <main></main>
+  </body>
+</html>
