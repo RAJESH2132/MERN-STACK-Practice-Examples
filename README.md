@@ -1,1 +1,1 @@
-# NareshIT
+# MERN STACK Practice Examples
