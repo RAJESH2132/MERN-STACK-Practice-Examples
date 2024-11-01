@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetInterval and ClearInterval</title>
+    <style>
+      p {
+        text-align: center;
+        margin-top: 300px;
+        font-size: 60px;
+        font-weight: bold;
+      }
+      .btn {
+        text-align: center;
+      }
+    </style>
+    <script>
+      function startClock() {
+        var time = new Date();
+        document.querySelector("p").innerHTML = time.toLocaleTimeString();
+      }
+      var timer;
+      function BodyLoad() {
+        timer = setInterval(startClock, 1000);
+      }
+      function PlayClock() {
+        timer = setInterval(startClock, 1000);
+      }
+      function PauseClock() {
+        clearInterval(timer);
+      }
+    </script>
+  </head>
+  <body onload="BodyLoad()">
+    <div>
+      <p></p>
+    </div>
+    <div class="btn">
+      <button id="play" onclick="PlayClock()">Start Clock</button>
+      <button id="pause" onclick="PauseClock()">Pause Clock</button>
+    </div>
+  </body>
+</html>
