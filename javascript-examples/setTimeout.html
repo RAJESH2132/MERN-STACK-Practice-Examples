@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeOUt</title>
+    <style>
+      button {
+        margin-top: 40px;
+        margin-left: 60px;
+      }
+      p {
+        text-align: center;
+        margin-top: 100px;
+        font-size: 50px;
+      }
+    </style>
+    <script>
+      function step1() {
+        document.querySelector("p").innerHTML = "0% completed";
+      }
+      function step2() {
+        document.querySelector("p").innerHTML = "25% completed";
+      }
+      function step3() {
+        document.querySelector("p").innerHTML = "50% completed";
+      }
+      function step4() {
+        document.querySelector("p").innerHTML = "75% completed";
+      }
+      function step5() {
+        document.querySelector("p").innerHTML = "100% completed";
+      }
+      function ButtonClick() {
+        setTimeout(step1, 1000);
+        setTimeout(step2, 2000);
+        setTimeout(step3, 3000);
+        setTimeout(step4, 4000);
+        setTimeout(step5, 5000);
+      }
+    </script>
+  </head>
+  <body>
+    <div><button onclick="ButtonClick()">Start Progress</button></div>
+    <div>
+      <p></p>
+    </div>
+  </body>
+</html>
