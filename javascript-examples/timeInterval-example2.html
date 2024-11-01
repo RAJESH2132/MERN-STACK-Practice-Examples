@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Designing Carousel</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script>
+      function LoadProduct(id) {
+        fetch(`https://fakestoreapi.com/products/${id}`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (product) {
+            document.getElementById("lblTitle").innerHTML = product.title;
+            document.getElementById("lblTitle").style.height = "45px";
+            document.getElementById("lblTitle").style.overflow = "hidden";
+            document.getElementById("imgProduct").src = product.image;
+            document.getElementById("lblPrice").innerHTML = "$" + product.price;
+          });
+      }
+      var count = 1;
+      function NextClick() {
+        if (count <= 19) {
+          count++;
+          LoadProduct(count);
+        }
+      }
+      function PrevClick() {
+        if (count > 1) {
+          count--;
+          LoadProduct(count);
+        }
+      }
+
+      function LoadProductAuto() {
+        if (count <= 19) {
+          count++;
+          fetch(`https://fakestoreapi.com/products/${count}`)
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (product) {
+              document.getElementById("lblTitle").innerHTML = product.title;
+              document.getElementById("lblTitle").style.height = "45px";
+              document.getElementById("lblTitle").style.overflow = "hidden";
+              document.getElementById("imgProduct").src = product.image;
+              document.getElementById("lblPrice").innerHTML =
+                "$" + product.price;
+            });
+        } else {
+          clearInterval(thread);
+          document.getElementById("play").disabled = "true";
+          document.getElementById("pause").disabled = "true";
+        }
+      }
+      var thread;
+      function PlayClick() {
+        thread = setInterval(LoadProductAuto, 1000);
+        document.getElementById("lblStatus").innerHTML =
+          "[Slide Show - Running]";
+        document.getElementById("play").disabled = "true";
+      }
+      function PauseClick() {
+        clearInterval(thread);
+        document.getElementById("lblStatus").innerHTML =
+          "[Slide Show - Paused]";
+        document.getElementById("pause").disabled = "true";
+      }
+      function SeekChange() {
+        LoadProduct(document.getElementById("seekBar").value);
+      }
+    </script>
+  </head>
+  <body
+    class="container-fluid d-flex justify-content-center"
+    onload="LoadProduct(1)"
+  >
+    <div class="card p-2 mt-4 w-50">
+      <div class="card-header text-center">
+        <div id="lblTitle"></div>
+        <div id="lblStatus"></div>
+      </div>
+      <div class="card-body overflow-hidden row">
+        <div
+          class="col-1 d-flex flex-column justify-content-center align-items-center"
+        >
+          <button
+            onclick="PrevClick()"
+            class="bi bi-chevron-left btn btn-dark"
+          ></button>
+        </div>
+        <div class="col-10 position-relative">
+          <div
+            class="position-absolute badge rounded rounded-circle p-2 fs-5 end-0 top-0 bg-danger text-white"
+            id="lblPrice"
+          ></div>
+          <img width="100%" height="350" id="imgProduct" />
+          <div>
+            <input
+              onchange="SeekChange()"
+              type="range"
+              min="1"
+              max="20"
+              value="1"
+              id="seekBar"
+              class="form-range w-100"
+            />
+          </div>
+        </div>
+        <div
+          class="col-1 d-flex flex-column justify-content-center align-items-center"
+        >
+          <button
+            onclick="NextClick()"
+            class="bi bi-chevron-right btn btn-dark"
+          ></button>
+        </div>
+      </div>
+      <div class="card-footer text-center">
+        <button
+          id="play"
+          onclick="PlayClick()"
+          class="btn btn-success bi bi-play"
+        ></button>
+        <button
+          id="pause"
+          onclick="PauseClick()"
+          class="btn btn-danger bi bi-pause ms-2"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>
