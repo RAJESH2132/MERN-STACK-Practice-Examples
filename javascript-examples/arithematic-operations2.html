@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic operations using Courses</title>
+    <style>
+      ul {
+        list-style: none;
+        margin-top: 30px;
+      }
+      li {
+        font-size: 20px;
+        padding: 10px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      function SubmitClick() {
+        var coursesList = document.getElementsByName("Course");
+        var list = "";
+        var fee = 0;
+        var output = document.getElementById("outputContainer");
+
+        for (var course of coursesList) {
+          if (course.checked) {
+            list += course.value + "<br><br>";
+            fee += parseInt(course.id);
+          }
+        }
+        var div = document.querySelector("div");
+        div.innerHTML = `<h1>Selected Courses</h1>`;
+        var p = document.createElement("p");
+        p.style.fontSize = "20px";
+        p.style.marginLeft = "20px";
+        p.innerHTML = list;
+        div.appendChild(p);
+        var h3 = document.createElement("h3");
+        h3.style.marginLeft = "20px";
+        h3.innerHTML = `Total Fee: ${fee}`;
+        div.appendChild(h3);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>SoftWare Courses</h1>
+    <ul>
+      <li>
+        <input
+          onchange="SubmitClick()"
+          type="checkbox"
+          id="10000"
+          value="UI Fullstack"
+          name="Course"
+        />UI Fullstack
+      </li>
+      <li>
+        <input
+          onchange="SubmitClick()"
+          type="checkbox"
+          id="20000"
+          value="Java"
+          name="Course"
+        />Java
+      </li>
+      <li>
+        <input
+          onchange="SubmitClick()"
+          type="checkbox"
+          id="15000"
+          value=".NET"
+          name="Course"
+        />.NET
+      </li>
+      <li>
+        <input
+          onchange="SubmitClick()"
+          type="checkbox"
+          id="12000"
+          value="Oracle"
+          name="Course"
+        />Oracle
+      </li>
+      <li>
+        <input
+          onchange="SubmitClick()"
+          type="checkbox"
+          id="25000"
+          value="Data Science"
+          name="Course"
+        />Data Science
+      </li>
+    </ul>
+    <button onclick="SubmitClick()">Submit</button>
+    <div id="outputContainer"></div>
+  </body>
+</html>
