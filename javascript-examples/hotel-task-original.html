@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Registration Form</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <style>
+      .accordion-button {
+        display: block;
+        text-align: center;
+      }
+      #errorMessage {
+        color: red;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      function RegisterClick() {
+        var customerName = document.getElementById("inputName").value;
+        var checkInDate = document.getElementById("inputDate").value;
+        var totalDays = parseInt(document.getElementById("inputDays").value);
+        var totalPersons = parseInt(
+          document.getElementById("inputPersons").value
+        );
+        var optDelux = document.getElementById("optDelux").checked;
+        var optSuite = document.getElementById("optSuite").checked;
+        var checkAC = document.getElementById("checkAC").checked;
+        var checkLocker = document.getElementById("checkLocker").checked;
+        var advanceAmount = parseFloat(
+          document.getElementById("advanceAmount").value
+        );
+        var errorMessage = document.getElementById("errorMessage");
+        var ModalElement = document.getElementById("summary");
+        const modal = new bootstrap.Modal(ModalElement);
+
+        var extraPersons = totalPersons - 2;
+        var total;
+        var Balance;
+        var amenitiesList = "";
+
+        if (customerName != "") {
+          if (checkInDate) {
+            if (totalDays >= 1) {
+              if (totalPersons >= 1) {
+                if (optDelux || optSuite) {
+                  if (advanceAmount >= 500) {
+                    if (optDelux) {
+                      document.getElementById("lblRoomType").textContent =
+                        document.getElementById("optDelux").value;
+                      total = 2500;
+                      document.getElementById("imgMeal").src =
+                        "../public/images/delux.jpg";
+                      if (checkAC) {
+                        total += 1000;
+                        amenitiesList +=
+                          document.getElementById("checkAC").value + "<br>";
+                      }
+                      if (checkLocker) {
+                        total += 300;
+                        amenitiesList +=
+                          document.getElementById("checkLocker").value + "<br>";
+                      }
+                      if (extraPersons) {
+                        total += 1000 * extraPersons;
+                      }
+                      if (totalDays >= 1) {
+                        total *= totalDays;
+                      }
+
+                      Balance = total - advanceAmount;
+                    }
+                    if (optSuite) {
+                      document.getElementById("lblRoomType").textContent =
+                        document.getElementById("optSuite").value;
+                      total = 4000;
+                      document.getElementById("imgMeal").src =
+                        "../public/images/suite.jpg";
+                      if (checkAC) {
+                        total += 1000;
+                        amenitiesList +=
+                          document.getElementById("checkAC").value + "<br>";
+                      }
+                      if (checkLocker) {
+                        total += 300;
+                        amenitiesList +=
+                          document.getElementById("checkLocker").value + "<br>";
+                      }
+                      if (extraPersons) {
+                        total += 1000 * extraPersons;
+                      }
+                      if (totalDays >= 1) {
+                        total *= totalDays;
+                      }
+
+                      Balance = total - advanceAmount;
+                    }
+                    console.log(total);
+                    console.log(Balance);
+                    document.getElementById("lblName").textContent =
+                      customerName;
+                    document.getElementById("lblDate").textContent =
+                      checkInDate;
+                    document.getElementById("lblDays").textContent = totalDays;
+                    document.getElementById("lblPersons").textContent =
+                      totalPersons;
+                    document.getElementById("lblTotal").textContent = total;
+
+                    document.getElementById("lblAdvance").textContent =
+                      advanceAmount;
+                    document.getElementById("lblBalance").textContent = Balance;
+                    document.getElementById("lblAmenities").innerHTML =
+                      amenitiesList;
+
+                    modal.show();
+                  } else {
+                    errorMessage.textContent =
+                      "Advance Amount Should be Greate than or Equal to Rs.500";
+                  }
+                } else {
+                  errorMessage.textContent = "Please Select a Room";
+                }
+              } else {
+                errorMessage.textContent =
+                  "Please Enter no of Persons greater than or Equal to 1";
+              }
+            } else {
+              errorMessage.textContent =
+                " Please Enter No on Days Greater than or Equal to 1";
+            }
+          } else {
+            errorMessage.textContent = " Please Select Date";
+          }
+        } else {
+          errorMessage.textContent = " Please Enter a Valid Name";
+        }
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <header
+      class="border border-2 p-2 border-black text-center mt-2 fs-3 fw-bold"
+    >
+      Hotel Registration Form
+    </header>
+    <section>
+      <div class="accordion" id="accordionContainer">
+        <!-- Item 1 -->
+        <div class="accordion-item">
+          <div class="accordion-header mt-1">
+            <button
+              class="accordion-button bg-black text-white fw-bold"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+            >
+              Customer Info
+            </button>
+          </div>
+          <div
+            class="accordion-collapse collapse"
+            id="collapseOne"
+            data-bs-parent="#accordionContainer"
+          >
+            <div
+              class="accordion-body bg-white text-black p-2 mt-2 border border-2 border-black"
+            >
+              <dl class="row ms-2">
+                <dt class="col-5">Customer Name</dt>
+                <dd class="col-4">
+                  <input
+                    type="text"
+                    required
+                    id="inputName"
+                    class="form-control"
+                  />
+                </dd>
+                <dt class="col-5">Check in Date</dt>
+                <dd class="col-4">
+                  <input
+                    type="date"
+                    required
+                    id="inputDate"
+                    class="form-control"
+                  />
+                </dd>
+                <dt class="col-5">Total No of Days</dt>
+                <dd class="col-4">
+                  <input
+                    type="number"
+                    required
+                    id="inputDays"
+                    class="form-control"
+                  />
+                </dd>
+                <dt class="col-5">Total No of Persons</dt>
+                <dd class="col-4">
+                  <input
+                    type="number"
+                    required
+                    id="inputPersons"
+                    class="form-control"
+                  />
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item-2 -->
+        <div class="accordion-item">
+          <div class="accordion-header mt-1">
+            <button
+              class="accordion-button bg-black text-white fw-bold"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+            >
+              Select Room Type
+            </button>
+          </div>
+          <div
+            class="accordion-collapse collapse"
+            id="collapseTwo"
+            data-bs-parent="#accordionContainer"
+          >
+            <div
+              class="accordion-body bg-white text-black p-2 mt-2 border border-2 border-black"
+            >
+              <div class="row">
+                <div class="col text-center">
+                  <img
+                    src="../public/images/delux.jpg"
+                    width="200"
+                    height="250"
+                    class="rounded-3"
+                  />
+                  <div class="mt-2">
+                    <input
+                      type="radio"
+                      id="optDelux"
+                      name="room"
+                      class="form-check-input"
+                      value="Delux Room"
+                    />
+                    <label class="form-check-label text-black fw-bold">
+                      Delux Room</label
+                    >
+                  </div>
+                </div>
+                <div class="col text-center">
+                  <img
+                    src="../public/images/suite.jpg"
+                    width="200"
+                    height="250"
+                    class="rounded-3"
+                  />
+                  <div class="mt-2">
+                    <input
+                      type="radio"
+                      id="optSuite"
+                      name="room"
+                      class="form-check-input"
+                      value="Suite Room"
+                    />
+                    <label class="form-check-label text-black fw-bold">
+                      Suite Room</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item-3 -->
+        <div class="accordion-item">
+          <div class="accordion-header mt-1">
+            <button
+              class="accordion-button bg-black text-white fw-bold"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+            >
+              Select Amenities
+            </button>
+          </div>
+          <div
+            class="accordion-collapse collapse"
+            id="collapseThree"
+            data-bs-parent="#accordionContainer"
+          >
+            <div
+              class="accordion-body bg-white text-black p-2 mt-2 border border-2 border-black"
+            >
+              <div class="row">
+                <div class="col text-center">
+                  <img
+                    src="../public/images/ac.png"
+                    width="200"
+                    height="220"
+                    class="rounded-3"
+                  />
+                  <div class="mt-2">
+                    <input
+                      type="checkbox"
+                      required
+                      id="checkAC"
+                      class="form-check-input"
+                      value="A/c"
+                    />
+                    <label
+                      for="checkAC"
+                      class="form-check-label text-black fw-bold"
+                    >
+                      A/C
+                    </label>
+                  </div>
+                </div>
+                <div class="col text-center">
+                  <img
+                    src="../public/images/locker.jpeg"
+                    width="200"
+                    height="220"
+                    class="rounded-3"
+                  />
+                  <div class="mt-2">
+                    <input
+                      type="checkbox"
+                      required
+                      id="checkLocker"
+                      class="form-check-input"
+                      value="Locker"
+                    />
+                    <label
+                      for="checkLocker"
+                      class="form-check-label text-black fw-bold"
+                    >
+                      Locker
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item-4 -->
+        <div class="accordion-item mt-1">
+          <div class="accordion-header">
+            <button
+              class="accordion-button fw-bold text-white bg-black"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+            >
+              Advance Amount
+            </button>
+          </div>
+          <div
+            class="accordion-collapse collapse"
+            id="collapseFour"
+            data-bs-parent="#accordionContainer"
+          >
+            <div
+              class="accordion-body bg-white text-black p-2 mt-2 border border-2 border-black"
+            >
+              <div class="row">
+                <div class="col">
+                  <label class="fw-bold d-block text-center" for="advanceAmount"
+                    >Advance Amount</label
+                  >
+                </div>
+                <div class="col">
+                  <input type="text" id="advanceAmount" required />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button
+          class="btn btn-dark text-white fw-bold px-5 mt-1"
+          onclick="RegisterClick()"
+        >
+          Register
+        </button>
+      </div>
+      <div id="errorMessage"></div>
+      <div class="modal fade" id="summary">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>Your Bill Summary</h3>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col">
+                  <dl>
+                    <dt>Customer Name</dt>
+                    <dd id="lblName"></dd>
+                    <dt>Check In Date</dt>
+                    <dd id="lblDate"></dd>
+                    <dt>Total No of Days</dt>
+                    <dd id="lblDays"></dd>
+                    <dt>Total No of Persons</dt>
+                    <dd id="lblPersons"></dd>
+                    <dt>Room Type</dt>
+                    <dd id="lblRoomType"></dd>
+                    <dt>Amenities</dt>
+                    <dd id="lblAmenities"></dd>
+                    <dt>Advance Amount</dt>
+                    <dd id="lblAdvance"></dd>
+                    <dt>Total Amount</dt>
+                    <dd id="lblTotal"></dd>
+                    <dt>Balance Amount</dt>
+                    <dd id="lblBalance"></dd>
+                  </dl>
+                </div>
+                <div class="col">
+                  <img id="imgMeal" width="100%" />
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-bs-dismiss="modal">
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
