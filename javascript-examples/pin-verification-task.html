@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN Verification</title>
+    <style>
+      label {
+        font-size: 25px;
+        padding-right: 12px;
+      }
+      #inputPIN {
+        padding: 6px;
+      }
+      button {
+        padding: 6px;
+      }
+      #attempts {
+        color: red;
+        font-size: 20px;
+      }
+    </style>
+    <script>
+      var attempts_left = 3;
+      function SubmitPIN() {
+        var pin = document.getElementById("inputPIN").value;
+        const correctPIN = "3355";
+        console.log(pin);
+        if (pin === correctPIN) {
+          document.write(`<h1>Success<h1>`);
+          attempts_left = 3;
+        } else {
+          attempts_left--;
+          if (attempts_left >= 1) {
+            document.getElementById(
+              "attempts"
+            ).textContent = `Wrong PIN : ${attempts_left} left `;
+          } else {
+            document.getElementById(
+              "attempts"
+            ).textContent = `Wrong PIN : ${attempts_left} attemps left:  Your are Blocked `;
+            document.getElementById("inputPIN").disabled = "true";
+          }
+        }
+        document.getElementById("inputPIN").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Verify PIN</legend>
+      <label for="inputPIN">Enter PIN</label>
+      <input type="text" id="inputPIN" autofocus />
+      <button onclick="SubmitPIN()">Submit</button>
+      <p id="attempts"></p>
+    </fieldset>
+  </body>
+</html>
