@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Id Availability</title>
+    <style>
+      label {
+        font-size: 22px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      #userInput {
+        padding: 6px;
+        width: 250px;
+      }
+      p {
+        margin-left: 15px;
+        font-size: 20px;
+        margin-top: 10px;
+        color: red;
+      }
+    </style>
+    <script>
+      function CheckUserId() {
+        var UserId = document.getElementById("userInput").value;
+        var lblError = document.getElementById("lblError");
+
+        if (UserId.length < 4) {
+          lblError.innerHTML = "User Name must be atleast 4 Characters";
+          return;
+        }
+        fetch("../data/userid.json")
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (users) {
+            let isTaken = false;
+
+            for (var user of users) {
+              if (user.userid === UserId) {
+                lblError.innerHTML = "User ID Taken - Try Another".fontcolor(
+                  "red"
+                );
+                isTaken = true;
+                break;
+              }
+            }
+            if (!isTaken) {
+              lblError.innerHTML = "User ID Available".fontcolor("green");
+            }
+          })
+          .catch(function (error) {
+            lblError.innerHTML = "Error Loading User data";
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Register New User</h2>
+    <div>
+      <label for="userInput">UserID</label>
+      <input type="text" id="userInput" autofocus onkeyup="CheckUserId()" />
+      <p id="lblError"></p>
+    </div>
+  </body>
+</html>
