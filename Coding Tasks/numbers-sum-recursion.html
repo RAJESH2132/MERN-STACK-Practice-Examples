@@ -1,0 +1,11 @@
+<script>
+  function SumOfNumbers(minValue, maxValue) {
+    if (maxValue == minValue) {
+      return minValue;
+    }
+    return maxValue + SumOfNumbers(minValue, maxValue - 1);
+  }
+  var minValue = parseInt(prompt("Enter the Starting Value"));
+  var maxValue = parseInt(prompt("Enter the Ending Value"));
+  document.write(SumOfNumbers(minValue, maxValue));
+</script>

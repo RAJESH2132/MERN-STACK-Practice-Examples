@@ -1,0 +1,13 @@
+<script>
+  function numbers(minValue, maxValue) {
+    if (maxValue < minValue) {
+      return;
+    }
+
+    document.write(maxValue + "<br>");
+    numbers(minValue, maxValue - 1);
+  }
+  var minValue = parseInt(prompt("Enter the starting Range"));
+  var maxValue = parseInt(prompt("Enter the Ending Range"));
+  numbers(minValue, maxValue);
+</script>

@@ -1,0 +1,10 @@
+<script>
+  function factorial(n) {
+    if (n == 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
+  var n = parseInt(prompt("Enter a Number to find Factorial"));
+  document.write(`The factorial of ${n} is ${factorial(n)}`);
+</script>
