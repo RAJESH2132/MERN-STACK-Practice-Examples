@@ -1,16 +1,13 @@
 <script>
   function multiplicationTable(number, multiplier = 1) {
-    // Base case: Stop when multiplier exceeds 10
     if (multiplier > 10) {
       return;
     }
     document.write(`${number} x ${multiplier} = ${number * multiplier} <br>`);
 
-    // Recursive call with the next multiplier
     multiplicationTable(number, multiplier + 1);
   }
 
-  // Example usage
   let number = parseInt(prompt("Enter the number for multiplication table"));
   multiplicationTable(number);
 </script>
