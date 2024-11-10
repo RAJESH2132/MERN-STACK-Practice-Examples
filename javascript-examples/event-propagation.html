@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+    <style>
+      nav {
+        background-color: burlywood;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        padding: 10px;
+        width: 150px;
+      }
+    </style>
+    <script>
+      function NavClick() {
+        alert("Nav Clicked");
+      }
+      function ButtonClick(e) {
+        alert("Button Clicked");
+        e.stopPropagation();
+      }
+    </script>
+  </head>
+  <body>
+    <nav onclick="NavClick()">
+      <div>
+        <button onclick="ButtonClick(event)">Click Me</button>
+      </div>
+    </nav>
+  </body>
+</html>
