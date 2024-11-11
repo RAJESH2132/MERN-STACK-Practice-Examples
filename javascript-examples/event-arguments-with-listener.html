@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Arguments with Event Handler</title>
+    <style>
+      #container {
+        height: 700px;
+
+        position: absolute;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+        position: relative;
+      }
+    </style>
+    <script>
+      var kid = document.getElementById("msg");
+      kid.addEventListener("click", productDetails(event));
+      function productDetails(e) {
+        var msg = document.getElementById("msg");
+        msg.innerHTML = `Name : ${e.target.name} <br>ID: ${e.target.id} <br>Height: ${e.target.height}`;
+
+        if (
+          e.clientX >= 188 &&
+          e.clientX <= 309 &&
+          e.clientY <= 447 &&
+          e.clientY >= 243
+        ) {
+          alert("Kids Pant 60% OFF ");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <img
+        src="../public/images/kids-shopping.jpg"
+        alt="kid"
+        width="400"
+        name="kid"
+        id="kidid"
+        class="kidClass"
+        height="500"
+      />
+    </div>
+    <p id="msg"></p>
+  </body>
+</html>
