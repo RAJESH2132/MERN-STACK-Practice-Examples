@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function OpenImage() {
+        window.open(
+          "../public/images/kids-shopping.jpg",
+          "KIDS",
+          "width=400 height=500"
+        );
+      }
+      document.oncontextmenu = function () {
+        alert("Right Click Disabled");
+        return false;
+      };
+      document.onselectstart = function () {
+        return false;
+      };
+    </script>
+  </head>
+  <body>
+    <img
+      ondblclick="OpenImage()"
+      src="../public/images/kids-shopping.jpg"
+      width="100"
+      height="100"
+    />
+    <p>Double Click to View Large</p>
+  </body>
+</html>

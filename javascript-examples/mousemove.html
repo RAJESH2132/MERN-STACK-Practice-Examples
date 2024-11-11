@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Move(e) {
+        var flag = document.querySelector("img");
+        flag.style.position = "absolute";
+        flag.style.left = e.clientX + "px";
+        flag.style.top = e.clientY + "px";
+      }
+    </script>
+  </head>
+  <body onmousemove="Move(event)">
+    <div style="height: 1000px">Move the mouse pointer to test.</div>
+    <img src="../public/images/flag.gif" width="50" height="50" />
+  </body>
+</html>
