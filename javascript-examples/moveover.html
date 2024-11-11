@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoveOver Event</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <style>
+      nav img:hover {
+        border: 2px solid blue;
+      }
+    </style>
+    <script>
+      function BodyLoad() {
+        fetch("../data/mouseover-data.json")
+          .then((response) => response.json())
+          .then((mobiles) => {
+            mobiles.map((mobile) => {
+              var img = document.createElement("img");
+              img.src = mobile.image;
+              img.width = "100";
+              img.className = "d-block my-4";
+              img.addEventListener("mouseover", (e) => {
+                document.getElementById("imgPreview").src = e.target.src;
+              });
+              document.querySelector("nav").appendChild(img);
+            });
+          });
+      }
+    </script>
+  </head>
+  <body class="container-fluid" onload="BodyLoad()">
+    <div class="mt-4 row">
+      <div class="col-2">
+        <nav></nav>
+      </div>
+      <div class="col-10">
+        <img id="imgPreview" width="400" height="500" />
+      </div>
+    </div>
+  </body>
+</html>
