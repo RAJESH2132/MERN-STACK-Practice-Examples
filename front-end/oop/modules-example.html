@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modules-Example</title>
+    <style>
+      p {
+        font-size: 40px;
+      }
+    </style>
+    <script type="module">
+      import Name, { Add, Multiplication, Hello } from "./modules-example.js";
+      document.getElementById("hello").innerHTML = Hello("Rajesh");
+      document.getElementById(
+        "addition"
+      ).innerHTML = `Addtion of 50 and 40 is: ${Add(50, 40)}`;
+      document.getElementById(
+        "mul"
+      ).innerHTML = `Multiplication of 10 and 9 is: ${Multiplication(10, 9)}`;
+      document.getElementById(
+        "name"
+      ).innerHTML = `Name is a default Parameter, The Name you provided is : ${Name(
+        "Virat"
+      )}`;
+    </script>
+  </head>
+  <body>
+    <p id="hello"></p>
+    <p id="addition"></p>
+    <p id="mul"></p>
+    <p id="name"></p>
+  </body>
+</html>
