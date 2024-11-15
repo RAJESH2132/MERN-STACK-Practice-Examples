@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Constructor</title>
+    <script>
+      class Database {
+        constructor(dbName) {
+          document.write(`Connected to ${dbName} Database<br>`);
+        }
+        Insert() {
+          document.write(`Record Inserted...`);
+        }
+        Update() {
+          document.write(`Record Updated..`);
+        }
+        Delete() {
+          document.write(`Record Deleted Successfully..`);
+        }
+      }
+
+      function Actions(btnName) {
+        switch (btnName) {
+          case "insert":
+            let obj1 = new Database(document.querySelector("select").value);
+            obj1.Insert();
+            break;
+
+          case "update":
+            let obj2 = new Database(document.querySelector("select").value);
+            obj2.Update();
+            break;
+          case "delete":
+            let obj3 = new Database(document.querySelector("select").value);
+            obj3.Delete();
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <select>
+      <option>Select Database</option>
+      <option>MongoDB</option>
+      <option>MySQL</option>
+      <option>SQL Server</option>
+    </select>
+    <button onclick="Actions('insert')">Insert</button>
+    <button onclick="Actions('update')">Update</button>
+    <button onclick="Actions('delete')">Delete</button>
+  </body>
+</html>
