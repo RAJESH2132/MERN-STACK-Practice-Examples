@@ -1,0 +1,26 @@
+<script>
+  class Product {
+    Rating = {
+      Vendor: {
+        Hyd: {
+          Rate: 4.5,
+        },
+      },
+      Customer: {
+        Hyd: {
+          Rate: 4.9,
+        },
+      },
+    };
+
+    get HydCustomerRating() {
+      return this.Rating.Customer.Hyd.Rate;
+    }
+    set HydCustomerRating(newRating) {
+      this.Rating.Customer.Hyd.Rate = newRating;
+    }
+  }
+  let obj = new Product();
+  obj.HydCustomerRating = prompt("Enter New Customer Rating for Hyd");
+  document.write(`Hyd Customer Rating : ${obj.HydCustomerRating}`);
+</script>

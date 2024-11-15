@@ -1,0 +1,14 @@
+<!-- //if There is no getter then we can change the value, else if there is a getter then we need setter to change the value -->
+
+<script>
+  var userName = prompt("Enter UserName:");
+  class Product {
+    _productName;
+
+    _productName = "shoes";
+  }
+  let obj = new Product();
+  //productName can be changed here
+  obj.ProductName = "Bat";
+  document.write(`Hi ${userName}, the product is: ${obj.ProductName}`);
+</script>

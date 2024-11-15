@@ -1,0 +1,17 @@
+<!-- //if There is no getter then we can change the value, else if there is a getter then we need setter to change the value -->
+
+<script>
+  var userName = prompt("Enter UserName:");
+  class Product {
+    _productName;
+
+    get ProductName() {
+      this._productName = "Shoes";
+      return this._productName;
+    }
+  }
+  let obj = new Product();
+  //productName will not change
+  obj.ProductName = "Bat";
+  document.write(`Hi ${userName}, the product is: ${obj.ProductName}`);
+</script>
