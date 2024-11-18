@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Aggregation</title>
+    <script>
+      class HDFC_version1 {
+        Personal = "Personal Banking Services";
+        Print() {
+          document.write(`${this.Personal}<br>`);
+        }
+      }
+      class HDFC_version2 {
+        Loans = "Housing and Personal Loans";
+        Print() {
+          let obj = new HDFC_version1();
+          obj.Print();
+          document.write(`${this.Loans}`);
+        }
+      }
+      class HDFC_version3 {
+        NRI = "NRI Banking Services";
+        Print() {
+          let obj = new HDFC_version2();
+          obj.Print();
+          document.write(`${this.NRI}`);
+        }
+      }
+      function SelectVersion() {
+        var version = document.querySelector("select").value;
+        switch (version) {
+          case "v1":
+            document.write(`<h2>HDFC Version-1 Installed</h2>`);
+            let obj1 = new HDFC_version1();
+            obj1.Print();
+            break;
+          case "v2":
+            document.write(`<h2>HDFC Version-2 Installed</h2>`);
+            let obj2 = new HDFC_version2();
+            obj2.Print();
+            break;
+          case "v3":
+            document.write(`<h2>HDFC Version-3 Installed</h2>`);
+            let obj3 = new HDFC_version3();
+            obj3.Print();
+            break;
+          default:
+            document.write("Please Select a Version");
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <select>
+        <option value="v1">Version-1 [2022]</option>
+        <option value="v2">Version-2 [2023]</option>
+        <option value="v3">Version-3 [latest]</option>
+      </select>
+      <button onclick="SelectVersion()">Select</button>
+    </div>
+  </body>
+</html>
