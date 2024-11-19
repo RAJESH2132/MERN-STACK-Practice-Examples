@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script>
+      function bodyload() {
+        if (localStorage.getItem("username") === null) {
+          location.href = "./login.html";
+        } else {
+          document.querySelector(
+            "p"
+          ).innerHTML = `Hello ! ${localStorage.getItem("username")}`;
+        }
+      }
+      function Signout() {
+        localStorage.removeItem("username");
+        location.href = "./login.html";
+      }
+    </script>
+  </head>
+  <body onload="bodyload()">
+    <h2>Home</h2>
+    <p></p>
+    <button onclick="Signout()">Signout</button>
+  </body>
+</html>
