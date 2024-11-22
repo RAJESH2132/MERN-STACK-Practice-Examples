@@ -48,7 +48,7 @@ app.post("/register-user", (req, res) => {
   mongoClient.connect(conString).then((client_obj) => {
     var database = client_obj.db("products");
     var product = {
-      id: req.body.id,
+      id: parseInt(req.body.id),
       title: req.body.title,
       price: parseInt(req.body.price),
       description: req.body.description,
@@ -72,11 +72,11 @@ app.put("/alter-product/:id", (req, res) => {
     database
       .collection("products")
       .updateOne(
-        { id: req.params.id },
+        { id: parseInt(req.params.id) },
         {
           $set: {
             title: req.body.title,
-            price: req.body.price,
+            price: parseInt(req.body.price),
             description: req.body.description,
             category: req.body.category,
           },
